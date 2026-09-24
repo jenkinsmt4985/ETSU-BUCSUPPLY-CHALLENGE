@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 430">
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#041E42"/><stop offset="1" stop-color="#0033A0"/></linearGradient></defs>
+<rect width="800" height="430" rx="28" fill="url(#g)"/>
+<circle cx="675" cy="70" r="85" fill="#FFC72C" opacity=".13"/><circle cx="95" cy="355" r="110" fill="#fff" opacity=".05"/>
+<text x="38" y="54" fill="#FFC72C" font-family="Arial" font-weight="700" font-size="18">MAKE</text>
+<text x="38" y="82" fill="#fff" font-family="Arial" font-size="15" opacity=".84">Capacity + inventory = customer protection</text>
+
+<g transform="translate(110 108)">
+<path d="M0 195V78l85-58v58l85-58v58l85-58v58h255v117z" fill="#fff"/>
+<rect x="48" y="130" width="95" height="65" fill="#A2AAAD"/><rect x="175" y="122" width="78" height="73" fill="#0033A0"/>
+<g fill="#FFC72C"><rect x="310" y="115" width="55" height="55"/><rect x="375" y="115" width="55" height="55"/><rect x="440" y="115" width="55" height="55"/></g>
+<circle cx="338" cy="93" r="20" fill="#0033A0"/><circle cx="403" cy="93" r="20" fill="#0033A0"/><circle cx="468" cy="93" r="20" fill="#0033A0"/>
+</g>
+</svg>

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 430">
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#041E42"/><stop offset="1" stop-color="#0033A0"/></linearGradient></defs>
+<rect width="800" height="430" rx="28" fill="url(#g)"/>
+<circle cx="675" cy="70" r="85" fill="#FFC72C" opacity=".13"/><circle cx="95" cy="355" r="110" fill="#fff" opacity=".05"/>
+<text x="38" y="54" fill="#FFC72C" font-family="Arial" font-weight="700" font-size="18">DELIVER</text>
+<text x="38" y="82" fill="#fff" font-family="Arial" font-size="15" opacity=".84">Move the right product to the right place on time</text>
+
+<g transform="translate(92 135)">
+<path d="M0 130H430V35H0z" fill="#fff"/><path d="M430 130h150V80l-45-45H430z" fill="#FFC72C"/>
+<rect x="455" y="58" width="55" height="35" rx="5" fill="#0033A0"/><circle cx="115" cy="142" r="34" fill="#A2AAAD"/><circle cx="115" cy="142" r="15" fill="#041E42"/><circle cx="500" cy="142" r="34" fill="#A2AAAD"/><circle cx="500" cy="142" r="15" fill="#041E42"/>
+<path d="M65 83h255" stroke="#0033A0" stroke-width="16"/><path d="M320 66l35 17-35 17" fill="#0033A0"/>
+</g>
+</svg>

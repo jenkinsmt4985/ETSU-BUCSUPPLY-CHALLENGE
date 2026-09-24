@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="BucSupply 6.0 — ETSU supply chain recruiting game with quantitative decisions, random events, achievements, Perfect Order goals, benchmark scoring, and animated operations." />
+  <title>BucSupply 6.0 | ETSU Supply Chain Challenge</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://commons.wikimedia.org">
+  <link rel="preconnect" href="https://upload.wikimedia.org">
+  <link rel="preconnect" href="https://thumb.wikimedia.org">
+</head>
+<body>
+<div id="confetti"></div>
+
+<header class="topbar">
+  <div class="brand">
+    <div class="brand-box">ETSU</div>
+    <div>
+      <div class="brand-title">Supply Chain Management</div>
+      <div class="brand-subtitle">BucSupply 6.0 • The Supply Chain Challenge</div>
+    </div>
+  </div>
+  <div class="top-actions">
+    <div class="benchmark-pill">Benchmark <strong>84</strong></div>
+    <button class="icon-btn" id="soundBtn" type="button" title="Toggle sound">🔊</button>
+    <div class="timer"><span>⏱</span><strong id="timer">10:00</strong></div>
+    <button class="ghost-btn" id="restartBtn" type="button">Restart</button>
+  </div>
+</header>
+
+<main>
+<section id="startScreen" class="screen active">
+  <div class="hero">
+    <div class="hero-copy">
+      <span class="eyebrow">ONE PLAYER • ABOUT 10 MINUTES • QUANTITATIVE MINI SIMULATION</span>
+      <h1>Can you deliver the Perfect Order?</h1>
+      <p>
+        You are the supply chain manager for <strong>Blue Ridge Medical</strong>.
+        A hospital needs emergency monitoring kits in seven days. You control the numbers:
+        forecast, supplier quantities, production buffers, freight, and emergency response.
+        Then you watch the entire system run.
+      </p>
+
+      <div class="mission-callout">
+        <div class="mission-icon">🎯</div>
+        <div>
+          <strong>Your challenge:</strong> beat the ETSU benchmark score of <b>84</b>.
+          <span>Starting budget: <b>$250,000</b> • Selling price: <b>$245/kit</b> • Base capacity: <b>1,000 kits</b></span>
+        </div>
+      </div>
+
+      <div class="perfect-order-strip">
+        <div><span>✓</span><b>ON TIME</b></div>
+        <div><span>✓</span><b>IN FULL</b></div>
+        <div><span>✓</span><b>ERROR FREE</b></div>
+        <div><span>✓</span><b>WITHIN BUDGET</b></div>
+      </div>
+
+      <div class="learning-strip">
+        <div><b>PLAN</b><span>Forecast</span></div>
+        <div><b>SOURCE</b><span>Suppliers</span></div>
+        <div><b>MAKE</b><span>Capacity</span></div>
+        <div><b>DELIVER</b><span>Freight</span></div>
+        <div><b>ADAPT</b><span>Disruption</span></div>
+      </div>
+
+      <div class="start-actions">
+        <button class="primary-btn pulse" id="startBtn" type="button">Start the Challenge</button>
+        <button class="secondary-btn" id="assumptionsBtn" type="button">View Simulation Assumptions</button>
+      </div>
+
+      <div id="previousScoreCard" class="previous-score hidden"></div>
+      <p class="tiny">Every run varies. The operating environment changes, random mini-events may appear, and your final outcome comes from the system—not from prewritten right answers.</p>
+    </div>
+
+    <div class="hero-visual hero-photo-collage">
+      <img class="hero-photo hero-photo-main" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Shipping_containers_in_a_port_%28Unsplash%29.jpg?width=1200" alt="Real photograph of shipping containers at a seaport" referrerpolicy="no-referrer">
+      <img class="hero-photo hero-photo-small one" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Assembly_line_at_Orbbec%27s_Intelligent_Manufacturing_Base.png?width=1200" alt="Real photograph of a manufacturing assembly line" referrerpolicy="no-referrer">
+      <img class="hero-photo hero-photo-small two" src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Delivery_truck_at_sunrise_%28Unsplash%29.jpg?width=1200" alt="Real photograph of a delivery truck on the road" referrerpolicy="no-referrer">
+      <div class="hero-overlay-card">
+        <span>REAL SUPPLY CHAIN PHOTOGRAPHY</span>
+        <strong>Ports • factories • warehouses • freight • healthcare</strong>
+        <small>Non-AI photographs throughout the game</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="assumptionsScreen" class="screen">
+  <div class="how-card assumptions-card">
+    <span class="eyebrow">SIMULATION ASSUMPTIONS</span>
+    <h1>Know the system before you run it.</h1>
+    <div class="assumption-grid photo-assumptions">
+      <div><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Santa_Cabrini_Hospital_Exterior.jpg?width=1200" alt="Hospital exterior" loading="lazy" referrerpolicy="no-referrer"><b>Customer</b><span>Expected demand: 1,000 kits</span><span>Actual demand varies each run</span><span>Selling price: $245/kit</span></div>
+      <div><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Shipping_containers_in_a_port_%28Unsplash%29.jpg?width=1200" alt="Shipping containers at a port" loading="lazy" referrerpolicy="no-referrer"><b>Global Supplier</b><span>$42/module</span><span>Capacity: 900</span><span>Base reliability: 88%</span></div>
+      <div><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Warehouse_in_New_Jersey_where_trucks_deliver_granite_slabs.jpg?width=1000" alt="Warehouse loading dock" loading="lazy" referrerpolicy="no-referrer"><b>Regional Supplier</b><span>$49/module</span><span>Capacity: 700</span><span>Base reliability: 97%</span></div>
+      <div><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Assembly_line_at_Orbbec%27s_Intelligent_Manufacturing_Base.png?width=1200" alt="Manufacturing production line" loading="lazy" referrerpolicy="no-referrer"><b>Production</b><span>Regular capacity: 1,000</span><span>Regular conversion: $55/unit</span><span>Overtime conversion: $78/unit</span></div>
+      <div><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Delivery_truck_at_sunrise_%28Unsplash%29.jpg?width=1200" alt="Delivery truck" loading="lazy" referrerpolicy="no-referrer"><b>Transportation</b><span>Standard: $9/unit, 92% reliability</span><span>Expedited: $24/unit, 99% reliability</span></div>
+      <div><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Warehouse_goods.jpg?width=1000" alt="Warehouse inventory" loading="lazy" referrerpolicy="no-referrer"><b>Inventory</b><span>Unsold finished goods: $12/unit penalty</span><span>Shortage loses the sale and hurts service</span></div>
+    </div>
+    <button class="primary-btn" id="assumptionStartBtn" type="button">Start Simulation</button>
+  </div>
+</section>
+
+<section id="gameScreen" class="screen">
+  <div class="game-grid">
+    <aside class="dashboard">
+      <div class="dash-title-row"><h2>Command Center</h2><span id="statusDot" class="status-dot"></span></div>
+
+      <div class="finance-block">
+        <span>Operating budget remaining</span>
+        <strong id="budgetKpi">$250,000</strong>
+        <div class="budget-meter"><i id="budgetBar"></i></div>
+      </div>
+
+      <div class="perfect-mini">
+        <div id="poTime"><span>○</span>On Time</div>
+        <div id="poFull"><span>○</span>In Full</div>
+        <div id="poError"><span>○</span>Error Free</div>
+        <div id="poBudget"><span>○</span>Within Budget</div>
+      </div>
+
+      <div class="kpi"><span>Customer Service</span><strong id="serviceKpi">70</strong><div class="meter"><i id="serviceBar"></i></div></div>
+      <div class="kpi"><span>Profit Potential</span><strong id="profitKpi">70</strong><div class="meter"><i id="profitBar"></i></div></div>
+      <div class="kpi"><span>Resilience</span><strong id="resilienceKpi">50</strong><div class="meter"><i id="resilienceBar"></i></div></div>
+      <div class="kpi"><span>Sustainability</span><strong id="sustainabilityKpi">50</strong><div class="meter"><i id="sustainabilityBar"></i></div></div>
+      <div class="score-card"><span>Supply Chain Score</span><strong id="scoreKpi">60</strong></div>
+
+      <div class="network-card">
+        <div class="network-title">Physical flow</div>
+        <div class="chain-mini">
+          <div id="node1"><span>01</span>Supplier</div><b>→</b>
+          <div id="node2"><span>02</span>Factory</div><b>→</b>
+          <div id="node3"><span>03</span>Transit</div><b>→</b>
+          <div id="node4"><span>04</span>Hospital</div>
+        </div>
+      </div>
+
+      <div class="tip"><strong>Simulation Insight</strong><span id="tipText"></span></div>
+    </aside>
+
+    <section class="decision-panel">
+      <div class="progress"><div id="progressBar"></div></div>
+      <div class="round-header">
+        <div><span class="eyebrow" id="roundLabel"></span><h2 id="roundTitle"></h2></div>
+        <div class="round-chip" id="roundChip"></div>
+      </div>
+
+      <div class="scene-card photo-scene-card">
+        <div class="scene-art real-scene-art">
+          <img id="sceneImage" src="" alt="" referrerpolicy="no-referrer">
+          <div class="photo-label" id="scenePhotoLabel">Real-world supply chain</div>
+        </div>
+        <div id="sceneText"></div>
+      </div>
+
+      <div id="photoRail" class="photo-rail"></div>
+      <div id="miniEvent" class="mini-event hidden"></div>
+      <div id="newsTicker" class="news-ticker hidden"></div>
+      <div id="decisionArea" class="decision-area"></div>
+      <div id="feedback" class="feedback"></div>
+
+      <div class="decision-footer">
+        <span id="scoreChange" class="score-change"></span>
+        <button class="primary-btn hidden" id="nextBtn" type="button">Continue →</button>
+      </div>
+    </section>
+  </div>
+</section>
+
+<section id="operationsScreen" class="screen">
+  <div class="operations-run-card">
+    <div class="ops-run-header">
+      <div>
+        <span class="eyebrow">LIVE OPERATIONS</span>
+        <h1>Your supply chain is running.</h1>
+        <p id="opsNarrative">The plan is locked. Now the physical system decides what actually reaches the hospital.</p>
+      </div>
+      <div class="ops-clock">
+        <span>SIMULATION DAY</span><strong id="simDay">1</strong><small>of 7</small>
+      </div>
+    </div>
+
+    <div class="customer-mood" id="customerMood">
+      <span class="mood-face" id="moodFace">🙂</span>
+      <div><small>HOSPITAL STATUS</small><strong id="moodText">Confident</strong></div>
+    </div>
+
+    <div class="animated-network" id="animatedNetwork">
+      <div class="lane lane-a"></div><div class="lane lane-b"></div>
+      <div class="network-node supplier-node photo-node" id="animSupplier"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Shipping_containers_in_a_port_%28Unsplash%29.jpg?width=1200" alt="Port and supplier logistics" referrerpolicy="no-referrer"><strong>SUPPLIERS</strong><span id="animSupplierCount">0 received</span></div>
+      <div class="network-node factory-node photo-node" id="animFactory"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Assembly_line_at_Orbbec%27s_Intelligent_Manufacturing_Base.png?width=1200" alt="Factory production line" referrerpolicy="no-referrer"><strong>FACTORY</strong><span id="animFactoryCount">0 produced</span></div>
+      <div class="network-node truck-node photo-node" id="animTransit"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Delivery_truck_at_sunrise_%28Unsplash%29.jpg?width=1200" alt="Freight transportation truck" referrerpolicy="no-referrer"><strong>TRANSIT</strong><span id="animTransitCount">0 shipped</span></div>
+      <div class="network-node hospital-node photo-node" id="animHospital"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Santa_Cabrini_Hospital_Exterior.jpg?width=1200" alt="Hospital customer" referrerpolicy="no-referrer"><strong>HOSPITAL</strong><span id="animHospitalCount">0 delivered</span></div>
+      <div id="flowObjects" class="flow-objects"></div>
+    </div>
+
+    <div class="ops-metrics">
+      <div><span>Actual demand</span><strong id="opsDemand">—</strong></div>
+      <div><span>Components received</span><strong id="opsComponents">0</strong></div>
+      <div><span>Kits produced</span><strong id="opsProduced">0</strong></div>
+      <div><span>On-time delivered</span><strong id="opsDelivered">0</strong></div>
+      <div><span>Ending inventory</span><strong id="opsInventory">0</strong></div>
+      <div><span>Live fill rate</span><strong id="opsFill">0%</strong></div>
+    </div>
+
+    <div class="event-console">
+      <div class="console-title">Operations feed</div>
+      <div id="eventFeed" class="event-feed"></div>
+    </div>
+
+    <div class="ops-footer">
+      <div class="execution-status"><span id="executionLabel">Receiving components...</span><div class="execution-bar"><i id="executionBar"></i></div></div>
+      <button class="primary-btn hidden" id="resultsBtn" type="button">Enter the Boardroom →</button>
+    </div>
+  </div>
+</section>
+
+<section id="boardroomScreen" class="screen">
+  <div class="boardroom-card">
+    <div class="boardroom-photo-wrap"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Plenary_and_Interactive_session_-_Engagement_%26_WLUG_Business_meeting.jpg?width=1200" alt="Real photograph of a business meeting" referrerpolicy="no-referrer"><div><span>EXECUTIVE REVIEW</span><strong>Your supply chain results are on the table.</strong></div></div>
+    <span class="eyebrow">BOARDROOM REVEAL</span>
+    <h1 id="boardHeadline">The hospital called...</h1>
+
+    <div class="board-hero">
+      <div class="board-number"><span>Demand</span><strong id="boardDemand"></strong><small>kits</small></div>
+      <div class="board-arrow">→</div>
+      <div class="board-number"><span>On-time delivery</span><strong id="boardDelivered"></strong><small>kits</small></div>
+      <div class="board-arrow">→</div>
+      <div class="board-number emphasis"><span>Fill rate</span><strong id="boardFill"></strong><small>%</small></div>
+    </div>
+
+    <div id="perfectOrderReveal" class="perfect-order-reveal"></div>
+
+    <div class="constraint-reveal">
+      <span class="result-kicker">BIGGEST CONSTRAINT</span>
+      <div class="constraint-icon" id="constraintIcon">🔴</div>
+      <h2 id="constraintTitle"></h2>
+      <p id="constraintText"></p>
+    </div>
+
+    <div class="board-financials">
+      <div><span>Revenue</span><strong id="boardRevenue"></strong></div>
+      <div><span>Total Cost</span><strong id="boardCost"></strong></div>
+      <div><span>Operating Profit</span><strong id="boardProfit"></strong></div>
+      <div><span>Benchmark</span><strong>84</strong></div>
+    </div>
+
+    <button class="primary-btn" id="continueResultsBtn" type="button">See My Score + Achievements →</button>
+  </div>
+</section>
+
+<section id="endScreen" class="screen">
+  <div class="end-card">
+    <span class="eyebrow">FINAL RESULTS</span>
+    <h1 id="endHeadline"></h1>
+
+    <div class="score-versus">
+      <div class="final-score"><span>Your Score</span><strong id="finalScore">0</strong><small>/ 100</small></div>
+      <div class="vs">VS</div>
+      <div class="benchmark-score"><span>ETSU Benchmark</span><strong>84</strong><small>/ 100</small></div>
+    </div>
+
+    <p id="endSummary"></p>
+    <div id="benchmarkResult" class="benchmark-result"></div>
+
+    <div class="final-photo-strip">
+      <figure><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Someone_in_the_goods_warehouse.jpg?width=1000" alt="Real warehouse operations photograph" loading="lazy" referrerpolicy="no-referrer"><figcaption>People + inventory</figcaption></figure>
+      <figure><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Image_of_hospital_equipment.jpg?width=900" alt="Real hospital equipment photograph" loading="lazy" referrerpolicy="no-referrer"><figcaption>The customer outcome</figcaption></figure>
+      <figure><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Warehouse_in_New_Jersey_where_trucks_deliver_granite_slabs.jpg?width=1000" alt="Real logistics loading dock photograph" loading="lazy" referrerpolicy="no-referrer"><figcaption>Physical distribution</figcaption></figure>
+    </div>
+
+    <div class="achievement-section">
+      <span class="result-kicker">ACHIEVEMENTS UNLOCKED</span>
+      <div id="achievementGrid" class="achievement-grid"></div>
+    </div>
+
+    <div class="operations-dashboard">
+      <div><span>Actual Demand</span><strong id="actualDemand"></strong><small>kits</small></div>
+      <div><span>Good Components Received</span><strong id="componentsReceived"></strong><small>units</small></div>
+      <div><span>Kits Produced</span><strong id="kitsProduced"></strong><small>units</small></div>
+      <div><span>On-Time Delivered</span><strong id="onTimeDelivered"></strong><small>units</small></div>
+      <div><span>Fill Rate</span><strong id="fillRate"></strong><small>%</small></div>
+      <div><span>Ending Inventory</span><strong id="endingInventory"></strong><small>kits</small></div>
+      <div><span>Total Revenue</span><strong id="totalRevenue"></strong></div>
+      <div><span>Total Cost</span><strong id="totalCost"></strong></div>
+      <div><span>Operating Profit</span><strong id="operatingProfit"></strong></div>
+      <div><span>Cost / Delivered Kit</span><strong id="costPerKit"></strong></div>
+    </div>
+
+    <div class="result-grid">
+      <div class="career-result">
+        <span class="result-kicker">YOUR DECISION STYLE</span>
+        <div class="career-icon" id="careerIcon">⚖️</div>
+        <h2 id="careerTitle"></h2>
+        <p id="careerText"></p>
+        <div id="careerTags" class="career-tags"></div>
+      </div>
+      <div class="performance-result">
+        <span class="result-kicker">FINAL PERFORMANCE</span>
+        <div class="end-metric"><span>Service</span><b id="endService"></b><i><em id="endServiceBar"></em></i></div>
+        <div class="end-metric"><span>Profit</span><b id="endProfit"></b><i><em id="endProfitBar"></em></i></div>
+        <div class="end-metric"><span>Resilience</span><b id="endResilience"></b><i><em id="endResilienceBar"></em></i></div>
+        <div class="end-metric"><span>Sustainability</span><b id="endSustainability"></b><i><em id="endSustainabilityBar"></em></i></div>
+      </div>
+    </div>
+
+    <div class="decision-recap">
+      <h2>Your Operating Decisions</h2>
+      <div id="recapGrid" class="recap-grid"></div>
+    </div>
+
+    <div class="end-actions">
+      <button class="primary-btn" id="playAgainBtn" type="button">Try to Beat My Score</button>
+      <a class="secondary-btn" href="https://www.etsu.edu/cbat/management-supply-chain/" target="_blank" rel="noopener">Explore ETSU Supply Chain</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <span>East Tennessee State University • Supply Chain Management</span>
+  <span>BucSupply 6.0 • Photo-Enhanced Game Edition</span>
+</footer>
+<details class="photo-credits">
+  <summary>Real-photo sources & licensing</summary>
+  <p>All photographic visuals in this version are real photographs—not AI-generated imagery. They are served from Wikimedia Commons. The selected photographs are CC0/public-domain sources except where a source page states otherwise. Source pages are included here for transparency.</p>
+  <div class="credits-grid">
+    <a href="https://commons.wikimedia.org/wiki/File:Shipping_containers_in_a_port_(Unsplash).jpg" target="_blank" rel="noopener">Port / containers — Igor Ovsyannykov, CC0</a>
+    <a href="https://commons.wikimedia.org/wiki/File:Warehouse_goods.jpg" target="_blank" rel="noopener">Warehouse inventory — ProjectManhattan, CC0</a>
+    <a href="https://commons.wikimedia.org/wiki/File:Warehouse_in_New_Jersey_where_trucks_deliver_granite_slabs.jpg" target="_blank" rel="noopener">Loading dock — Tomwsulcer, CC0</a>
+    <a href="https://commons.wikimedia.org/wiki/File:Assembly_line_at_Orbbec%27s_Intelligent_Manufacturing_Base.png" target="_blank" rel="noopener">Assembly line — Baitutai, CC0</a>
+    <a href="https://commons.wikimedia.org/wiki/File:Delivery_truck_at_sunrise_(Unsplash).jpg" target="_blank" rel="noopener">Delivery truck — Wikimedia Commons / pre-2017 Unsplash, CC0</a>
+    <a href="https://commons.wikimedia.org/wiki/File:The_Road_(Unsplash).jpg" target="_blank" rel="noopener">Road / disruption — Dan Carlson, CC0</a>
+    <a href="https://commons.wikimedia.org/wiki/File:Santa_Cabrini_Hospital_Exterior.jpg" target="_blank" rel="noopener">Hospital exterior — Nsophiay, CC0</a>
+    <a href="https://commons.wikimedia.org/wiki/File:Image_of_hospital_equipment.jpg" target="_blank" rel="noopener">Hospital equipment — Bamjos, CC0</a>
+    <a href="https://commons.wikimedia.org/wiki/File:Plenary_and_Interactive_session_-_Engagement_%26_WLUG_Business_meeting.jpg" target="_blank" rel="noopener">Meeting / boardroom — Androide rockero, CC0</a>
+    <a href="https://commons.wikimedia.org/wiki/File:Someone_in_the_goods_warehouse.jpg" target="_blank" rel="noopener">Warehouse worker — Wikimedia Commons, CC0</a>
+  </div>
+</details>
+
+<script src="game.js"></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 430">
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#041E42"/><stop offset="1" stop-color="#0033A0"/></linearGradient></defs>
+<rect width="800" height="430" rx="28" fill="url(#g)"/>
+<circle cx="675" cy="70" r="85" fill="#FFC72C" opacity=".13"/><circle cx="95" cy="355" r="110" fill="#fff" opacity=".05"/>
+<text x="38" y="54" fill="#FFC72C" font-family="Arial" font-weight="700" font-size="18">PLAN</text>
+<text x="38" y="82" fill="#fff" font-family="Arial" font-size="15" opacity=".84">Turn uncertainty into a usable forecast</text>
+
+<g transform="translate(130 120)">
+<rect width="530" height="230" rx="22" fill="#fff"/>
+<path d="M55 175h410" stroke="#d7dfe8" stroke-width="4"/><path d="M55 175V45" stroke="#d7dfe8" stroke-width="4"/>
+<polyline points="65,150 130,130 190,140 255,92 320,110 385,60 455,78" fill="none" stroke="#0033A0" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="65,164 130,145 190,125 255,118 320,83 385,78 455,45" fill="none" stroke="#FFC72C" stroke-width="8" stroke-dasharray="12 12"/>
+<circle cx="385" cy="60" r="9" fill="#0033A0"/><circle cx="455" cy="45" r="9" fill="#FFC72C"/>
+<text x="270" y="215" text-anchor="middle" font-family="Arial" fill="#041E42" font-weight="700">DEMAND CHANGES — YOUR PLAN MUST ADAPT</text>
+</g>
+</svg>

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 430">
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#041E42"/><stop offset="1" stop-color="#0033A0"/></linearGradient></defs>
+<rect width="800" height="430" rx="28" fill="url(#g)"/>
+<circle cx="675" cy="70" r="85" fill="#FFC72C" opacity=".13"/><circle cx="95" cy="355" r="110" fill="#fff" opacity=".05"/>
+<text x="38" y="54" fill="#FFC72C" font-family="Arial" font-weight="700" font-size="18">SOURCE</text>
+<text x="38" y="82" fill="#fff" font-family="Arial" font-size="15" opacity=".84">Price is only one part of supplier value</text>
+
+<g transform="translate(85 125)" font-family="Arial">
+<rect x="0" y="15" width="185" height="180" rx="20" fill="#fff"/><rect x="230" y="0" width="185" height="195" rx="20" fill="#fff"/><rect x="460" y="15" width="185" height="180" rx="20" fill="#fff"/>
+<text x="92" y="58" text-anchor="middle" fill="#041E42" font-size="34">💲</text><text x="92" y="93" text-anchor="middle" fill="#041E42" font-weight="700">LOW COST</text><text x="92" y="126" text-anchor="middle" fill="#667085">Long lead time</text>
+<text x="322" y="48" text-anchor="middle" fill="#041E42" font-size="34">⚖</text><text x="322" y="83" text-anchor="middle" fill="#041E42" font-weight="700">BALANCED</text><text x="322" y="116" text-anchor="middle" fill="#667085">Dual source</text>
+<text x="552" y="58" text-anchor="middle" fill="#041E42" font-size="34">⚡</text><text x="552" y="93" text-anchor="middle" fill="#041E42" font-weight="700">FAST</text><text x="552" y="126" text-anchor="middle" fill="#667085">Regional source</text>
+</g>
+</svg>

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 430">
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#041E42"/><stop offset="1" stop-color="#0033A0"/></linearGradient></defs>
+<rect width="800" height="430" rx="28" fill="url(#g)"/>
+<circle cx="675" cy="70" r="85" fill="#FFC72C" opacity=".13"/><circle cx="95" cy="355" r="110" fill="#fff" opacity=".05"/>
+<text x="38" y="54" fill="#FFC72C" font-family="Arial" font-weight="700" font-size="18">ADAPT</text>
+<text x="38" y="82" fill="#fff" font-family="Arial" font-size="15" opacity=".84">Disruptions test the whole system</text>
+
+<g transform="translate(105 100)">
+<path d="M0 205L240 0l240 205z" fill="#FFC72C"/><rect x="214" y="70" width="52" height="83" rx="15" fill="#041E42"/><circle cx="240" cy="176" r="18" fill="#041E42"/>
+<path d="M390 215h260" stroke="#fff" stroke-width="55"/><path d="M420 215h45M500 215h45M580 215h45" stroke="#041E42" stroke-width="8"/>
+<path d="M505 160l38 55-38 55" fill="none" stroke="#b42318" stroke-width="14"/>
+</g>
+</svg>
