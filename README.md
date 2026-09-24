@@ -1,145 +1,78 @@
-# BucSupply 6.0 — The Supply Chain Challenge
+# BucSupply V7 — Marketplace-Inspired Beginner Version
 
-Version 6 adds game mechanics and replay value without making the core supply-chain simulation more complicated.
+This version is a complete reset from the more complicated V6 game.
 
-## New in Version 6
+## Design goal
 
-### 1. Perfect Order Challenge
-The player now tries to achieve all four:
-- On Time
-- In Full
-- Error Free
-- Within Budget
+The audience is a prospective student who may not know what "supply chain" means yet.
 
-Achieving all four unlocks a Perfect Order achievement.
+The game therefore teaches the concept before asking the player to make decisions.
 
-### 2. ETSU Benchmark
-The benchmark score is 84.
+## How this version is based on the Marketplace Help File
 
-The final screen shows:
-- Player score
-- ETSU benchmark
-- How far above or below the benchmark the player finished
+The attached Marketplace simulation emphasizes several learning principles that are used directly here:
 
-The best score on the device is saved using browser local storage.
+1. Keep decisions limited to their most important dimensions so the game remains manageable.
+2. Explain the content, context, and educational objective of decisions.
+3. Present decisions in approximately the order they occur in the real world.
+4. Require players to physically enter decisions and investigate the consequences.
+5. Forecast demand, schedule operating capacity, run a production simulation, and review results.
+6. Learn from one period and adjust decisions in the next.
+7. Use target inventory and replenishment points to control a pull-style production system.
 
-### 3. Random Mini-Events
-A run may include zero, one, or two additional events, such as:
-- Supplier flash discount
-- Better demand intelligence
-- Hospital sustainability request
-- Optional incoming quality inspection
+## Game structure
 
-These appear between major decisions and create additional replay variation.
+### Intro
+Explains supply chain in plain English:
+Supplier → Factory → Warehouse → Customer
 
-### 4. Hospital Mood
-The animated operations screen now gives the hospital a visible status:
-- Confident
-- Concerned
-- Critical
-- Delighted
+### Round 1
+Player learns and makes four simple decisions:
+1. Forecast customer demand
+2. Order supplier parts
+3. Set factory capacity
+4. Set warehouse replenishment and target inventory
 
-### 5. Stronger Visual Consequences
-The operations animation can visibly show:
-- excess inventory boxes piling up
-- an empty production buffer
-- supplier disruption
-- transportation disruption
-- customer shortage
-- strong customer fill
+### Run the 65-day simulation
+The game animates the physical flow and reveals uncertain customer demand.
 
-### 6. Boardroom Reveal
-After the live operations animation, the player enters a boardroom screen showing:
-- actual demand
-- on-time delivery
-- fill rate
-- Perfect Order result
-- biggest system constraint
-- revenue
-- total cost
-- operating profit
-- benchmark
+### Results
+The player sees:
+- demand
+- units delivered
+- lost sales
+- ending finished inventory
+- unused supplier parts
+- simplified operating profit
+- customers served
+- inventory efficiency
+- profit score
 
-### 7. Constraint Diagnosis
-The simulation identifies the largest operational constraint among:
-- supplier availability
-- production capacity
-- transportation reliability
-- forecast / demand gap
+### Round 2
+The same decisions are pre-populated with the player's Round 1 settings.
 
-### 8. Achievement Badges
-Possible badges include:
-- Perfect Order
-- Customer Hero
-- Profit Protector
-- Resilience Builder
-- Green Chain
-- Forecast Ace
-- Supplier Strategist
-- Inventory Ninja
-- Beat the Benchmark
+The player sees the previous results and adjusts the plan.
 
-### 9. Replay Motivation
-The player's best score is stored locally in the browser. No login or database is required.
+### Final
+The game compares the two rounds and explains that the player just practiced real supply chain management.
 
-## Core simulation retained from Version 5
+## What was intentionally removed from V6
 
-- $250,000 operating budget
-- Forecast quantity
-- Supplier order quantities
-- Supplier reliability and capacity
-- Production capacity
-- Safety stock
-- Overtime
-- Standard and expedited freight
-- Random actual demand
-- Random major disruption
-- Emergency response spending
-- Animated physical flow
-- Revenue
-- total cost
-- operating profit
-- fill rate
-- ending inventory
-- cost per delivered kit
-- service / profit / resilience / sustainability scores
+- benchmark score
+- achievement badges
+- Perfect Order challenge
+- boardroom screen
+- resilience jargon
+- sustainability jargon
+- multiple supplier reliability formulas
+- emergency budget mechanics
+- random mini-events
+- unexplained cost structures
+- complex career profiling
+- excessive dashboards
 
-## Deploy to GitHub Pages
+The purpose is learning first, game mechanics second.
 
-Replace the previous repository files with these files:
+## GitHub Pages
 
-```powershell
-git add .
-git commit -m "Upgrade BucSupply to Version 6 game mechanics"
-git push origin main
-```
-
-If GitHub Pages is already enabled, it will update automatically.
-
-## Files
-- index.html
-- styles.css
-- game.js
-- README.md
-- assets/
-
-
-## Real photography enhancement
-
-This build replaces the cartoon-like decision visuals with real supply-chain photography throughout the experience.
-
-Photographic subjects include:
-- container ports and global sourcing
-- warehouse inventory
-- loading docks
-- manufacturing / assembly
-- freight transportation
-- road disruption
-- hospital exterior
-- hospital equipment
-- warehouse operations
-- business / boardroom review
-
-The photos are served from Wikimedia Commons rather than generated by AI. The selected sources are CC0/public-domain photographs. A visible "Real-photo sources & licensing" section is included below the game so the source pages remain transparent.
-
-The game still keeps lightweight icons/emojis for motion and status feedback, but the main visual storytelling now uses real photographs.
+Upload the contents of this folder to the repository root and make sure GitHub Pages is publishing from the `main` branch `/ (root)`.
