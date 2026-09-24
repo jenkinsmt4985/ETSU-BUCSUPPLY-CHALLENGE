@@ -76,3 +76,48 @@ The purpose is learning first, game mechanics second.
 ## GitHub Pages
 
 Upload the contents of this folder to the repository root and make sure GitHub Pages is publishing from the `main` branch `/ (root)`.
+
+
+# Version 7.1 — Real Photo Edition
+
+Version 7.1 keeps the simplified, beginner-friendly, Marketplace-inspired structure from V7 but adds a much richer layer of real photography.
+
+Real photographs now appear on:
+- the opening screen
+- the hospital/customer scenario
+- the end-to-end supply-chain introduction
+- all four decision screens
+- the live 65-day simulation
+- the Round 1 and Round 2 results
+- the final supply-chain recap
+
+Subjects include:
+- container ports
+- warehouse employees
+- warehouse inventory
+- receiving/loading docks
+- modern manufacturing
+- trucks
+- hospitals
+- hospital equipment
+
+## Make every image local before GitHub upload
+
+Double-click:
+
+`SETUP_REAL_PHOTOS.bat`
+
+Or run:
+
+```powershell
+Set-ExecutionPolicy -Scope Process Bypass
+.\SETUP_REAL_PHOTOS.ps1
+```
+
+The script downloads verified CC0/public-domain photographs from Wikimedia Commons into `assets/photos`.
+
+After the script finishes, the game uses those local files from your GitHub repository. Normal gameplay does not require an external image connection.
+
+The HTML also includes verified online fallbacks so the page will still show the same real photographs if someone opens the ZIP before running the setup script.
+
+See `PHOTO_SOURCES.md` for the image sources and credits.

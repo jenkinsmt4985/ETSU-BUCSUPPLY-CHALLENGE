@@ -40,3 +40,17 @@ h2,h3{color:var(--blue)}.lead{font-size:19px;line-height:1.55}.primary,.secondar
 footer{background:var(--blue);color:#fff;padding:17px 4vw;display:flex;justify-content:space-between;gap:20px;font-size:11px}
 @media(max-width:900px){.hero,.game-shell{grid-template-columns:1fr}.sidebar{position:static}.tutorial-steps,.result-grid,.final-compare{grid-template-columns:1fr 1fr}.lesson-card{grid-template-columns:1fr}.lesson-card img{height:230px}.lesson-card>div{padding:16px}.live-chain{grid-template-columns:1fr}.live-arrow{transform:rotate(90deg);text-align:center}.simple-chain{grid-template-columns:1fr}.simple-chain i{transform:rotate(90deg);text-align:center}}
 @media(max-width:600px){.hero-photo{height:360px}.tutorial-steps,.result-grid,.final-compare,.two-controls,.day-row{grid-template-columns:1fr}.scenario,.career-simple{grid-template-columns:1fr}.scenario div,.career-simple div{padding:15px}.slider-line{grid-template-columns:1fr}.score-row{grid-template-columns:1fr}.time-note{display:none}footer{flex-direction:column}}
+
+
+/* ===== V7.1 real-photography enhancement ===== */
+.immersion-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin:18px 0 24px}
+.immersion-strip figure,.results-photo-row figure,.final-photo-rail figure{margin:0;position:relative;overflow:hidden;border-radius:12px;background:#e9eef4;border:1px solid #dce5ef}
+.immersion-strip figure{height:155px}
+.immersion-strip img,.results-photo-row img,.final-photo-rail img{width:100%;height:100%;object-fit:cover;display:block}
+.immersion-strip figcaption,.results-photo-row figcaption,.final-photo-rail figcaption{position:absolute;left:7px;right:7px;bottom:7px;background:rgba(4,30,66,.88);color:#fff;border-radius:8px;padding:6px 7px;font-size:9px;font-weight:800;line-height:1.2}
+.results-photo-row{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin:18px 0}
+.results-photo-row figure{height:150px}
+.final-photo-rail{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin:22px 0}
+.final-photo-rail figure{height:150px}
+@media(max-width:800px){.immersion-strip,.final-photo-rail{grid-template-columns:1fr 1fr}.results-photo-row{grid-template-columns:1fr}}
+@media(max-width:520px){.immersion-strip,.final-photo-rail{grid-template-columns:1fr}}

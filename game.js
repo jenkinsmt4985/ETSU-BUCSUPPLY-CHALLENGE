@@ -1,10 +1,16 @@
 const $=id=>document.getElementById(id);
 const screens=["welcome","tutorial","game","simulation","results","final"];
 const PHOTOS={
-  demand:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Santa_Cabrini_Hospital_Exterior.jpg?width=1000",
-  source:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Warehouse_in_New_Jersey_where_trucks_deliver_granite_slabs.jpg?width=1000",
-  make:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Assembly_line_at_Orbbec%27s_Intelligent_Manufacturing_Base.png?width=1000",
-  warehouse:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Warehouse_goods.jpg?width=1000"
+  demand:"assets/photos/hospital.jpg",
+  source:"assets/photos/port.jpg",
+  make:"assets/photos/factory.png",
+  warehouse:"assets/photos/warehouse.jpg"
+};
+const PHOTO_FALLBACKS={
+  demand:"https://upload.wikimedia.org/wikipedia/commons/7/75/Santa_Cabrini_Hospital_Exterior.jpg",
+  source:"https://upload.wikimedia.org/wikipedia/commons/c/c5/Shipping_containers_in_a_port_%28Unsplash%29.jpg",
+  make:"https://upload.wikimedia.org/wikipedia/commons/9/9c/Assembly_line_at_Orbbec%27s_Intelligent_Manufacturing_Base.png",
+  warehouse:"https://upload.wikimedia.org/wikipedia/commons/c/c7/Warehouse_goods.jpg"
 };
 let state={round:1,step:0,decisions:[],results:[],working:{}};
 
@@ -62,7 +68,9 @@ function renderStep(){
   const l=lessons[state.step];setSide();
   $("stepEyebrow").textContent=`ROUND ${state.round} • SIMPLE DECISION ${state.step+1}`;
   $("stepTitle").textContent=l.title;$("stepCount").textContent=`${state.step+1} / 4`;
-  $("lessonPhoto").src=l.photo;$("lessonPhoto").alt=l.heading;$("lessonHeading").textContent=l.heading;$("lessonText").textContent=l.text;$("termBox").innerHTML=l.term;
+  $("lessonPhoto").src=l.photo;$("lessonPhoto").alt=l.heading;
+  const fallbackKey=l.key==="forecast"?"demand":l.key==="parts"?"source":l.key==="capacity"?"make":"warehouse";
+  $("lessonPhoto").onerror=()=>{$("lessonPhoto").onerror=null;$("lessonPhoto").src=PHOTO_FALLBACKS[fallbackKey]};$("lessonHeading").textContent=l.heading;$("lessonText").textContent=l.text;$("termBox").innerHTML=l.term;
   $("decisionFeedback").classList.add("hidden");$("backBtn").classList.toggle("hidden",state.step===0);
   $("continueBtn").textContent=state.step===3?"Run My Supply Chain →":"Continue →";
   l.render();syncFeedback();

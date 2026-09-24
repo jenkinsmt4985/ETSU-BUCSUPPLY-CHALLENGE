@@ -43,8 +43,8 @@
       <button class="primary" id="beginBtn">Show Me How It Works</button>
     </div>
     <div class="hero-photo">
-      <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Someone_in_the_goods_warehouse.jpg?width=1200" alt="Real warehouse operations photograph">
-      <div class="photo-caption">Real supply chains connect people, products, information, and customers.</div>
+      <img src="assets/photos/warehouse_worker.jpg" alt="Real warehouse worker surrounded by stored goods" loading="eager" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/4/4e/Someone_in_the_goods_warehouse.jpg';">
+      <div class="photo-caption">Supply chains are real people moving real products to real customers.</div>
     </div>
   </div>
 </section>
@@ -63,12 +63,19 @@
     </div>
 
     <div class="scenario">
-      <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Image_of_hospital_equipment.jpg?width=850" alt="Real hospital equipment">
+      <img src="assets/photos/medical_equipment.jpg" alt="Real hospital equipment" loading="lazy" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/4/44/Image_of_hospital_equipment.jpg';">
       <div>
         <strong>Your company: BucMed</strong>
         <p>BucMed assembles portable patient-monitor kits for hospitals. Each finished monitor needs one sensor kit from a supplier.</p>
         <p>Customer research suggests the hospital will need <b>about 800 monitors</b> this quarter, but the exact number is uncertain.</p>
       </div>
+    </div>
+
+    <div class="immersion-strip">
+      <figure><img src="assets/photos/port.jpg" alt="Shipping containers in a real port" loading="lazy" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/c/c5/Shipping_containers_in_a_port_%28Unsplash%29.jpg';"><figcaption>Parts may begin far away</figcaption></figure>
+      <figure><img src="assets/photos/factory.png" alt="Modern manufacturing assembly line" loading="lazy" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/9/9c/Assembly_line_at_Orbbec%27s_Intelligent_Manufacturing_Base.png';"><figcaption>Factories turn parts into products</figcaption></figure>
+      <figure><img src="assets/photos/truck.jpg" alt="Delivery truck" loading="lazy" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/e/e6/Delivery_truck_at_sunrise_%28Unsplash%29.jpg';"><figcaption>Transportation connects the network</figcaption></figure>
+      <figure><img src="assets/photos/hospital.jpg" alt="Hospital customer" loading="lazy" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/7/75/Santa_Cabrini_Hospital_Exterior.jpg';"><figcaption>The customer is the reason the chain exists</figcaption></figure>
     </div>
 
     <button class="primary" id="startRoundBtn">Start Round 1</button>
@@ -126,13 +133,13 @@
     <p class="sim-intro">The hospital's actual demand is now being revealed. Your supplier order, factory capacity, and warehouse settings determine whether customers are served.</p>
 
     <div class="live-chain">
-      <div class="live-node"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Warehouse_in_New_Jersey_where_trucks_deliver_granite_slabs.jpg?width=600" alt="Warehouse loading dock"><b>SUPPLIER</b><span id="simParts">0 parts</span></div>
+      <div class="live-node"><img src="assets/photos/loading_dock.jpg" alt="Real warehouse receiving and loading dock" loading="lazy" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/c/c7/Warehouse_in_New_Jersey_where_trucks_deliver_granite_slabs.jpg';"><b>SUPPLIER</b><span id="simParts">0 parts</span></div>
       <div class="live-arrow">→</div>
-      <div class="live-node"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Assembly_line_at_Orbbec%27s_Intelligent_Manufacturing_Base.png?width=700" alt="Manufacturing line"><b>FACTORY</b><span id="simMade">0 made</span></div>
+      <div class="live-node"><img src="assets/photos/factory.png" alt="Real manufacturing assembly line" loading="lazy" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/9/9c/Assembly_line_at_Orbbec%27s_Intelligent_Manufacturing_Base.png';"><b>FACTORY</b><span id="simMade">0 made</span></div>
       <div class="live-arrow">→</div>
-      <div class="live-node"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Warehouse_goods.jpg?width=700" alt="Warehouse inventory"><b>WAREHOUSE</b><span id="simInventory">0 in stock</span></div>
+      <div class="live-node"><img src="assets/photos/warehouse.jpg" alt="Real warehouse inventory" loading="lazy" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/c/c7/Warehouse_goods.jpg';"><b>WAREHOUSE</b><span id="simInventory">0 in stock</span></div>
       <div class="live-arrow">→</div>
-      <div class="live-node"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Santa_Cabrini_Hospital_Exterior.jpg?width=700" alt="Hospital exterior"><b>HOSPITAL</b><span id="simSold">0 delivered</span></div>
+      <div class="live-node"><img src="assets/photos/hospital.jpg" alt="Real hospital customer" loading="lazy" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/7/75/Santa_Cabrini_Hospital_Exterior.jpg';"><b>HOSPITAL</b><span id="simSold">0 delivered</span></div>
     </div>
 
     <div class="day-row">
@@ -158,6 +165,12 @@
       <div><span>Finished inventory left</span><strong id="resInventory"></strong><small>unsold monitors</small></div>
       <div><span>Unused supplier parts</span><strong id="resParts"></strong><small>parts bought but not used</small></div>
       <div><span>Operating profit</span><strong id="resProfit"></strong><small>after simplified costs</small></div>
+    </div>
+
+    <div class="results-photo-row">
+      <figure><img src="assets/photos/warehouse.jpg" alt="Warehouse inventory racks" loading="lazy" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/c/c7/Warehouse_goods.jpg';"><figcaption>Too much inventory ties up money</figcaption></figure>
+      <figure><img src="assets/photos/truck.jpg" alt="Delivery truck in transit" loading="lazy" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/e/e6/Delivery_truck_at_sunrise_%28Unsplash%29.jpg';"><figcaption>Products only create value when they reach customers</figcaption></figure>
+      <figure><img src="assets/photos/medical_equipment.jpg" alt="Hospital equipment" loading="lazy" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/4/44/Image_of_hospital_equipment.jpg';"><figcaption>Customer demand drives the whole system</figcaption></figure>
     </div>
 
     <div class="simple-scorecard">
@@ -196,11 +209,18 @@
     </div>
 
     <div class="career-simple">
-      <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Someone_in_the_goods_warehouse.jpg?width=800" alt="Real warehouse employee">
+      <img src="assets/photos/warehouse_worker.jpg" alt="Warehouse employee in a real goods warehouse" loading="lazy" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/4/4e/Someone_in_the_goods_warehouse.jpg';">
       <div>
         <h2>What do supply chain professionals do?</h2>
         <p>They solve problems like this every day: How much will customers want? How much should we order? How much can we make? How much inventory should we keep? How do we improve after something unexpected happens?</p>
       </div>
+    </div>
+
+    <div class="final-photo-rail">
+      <figure><img src="assets/photos/port.jpg" alt="Real container port" loading="lazy" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/c/c5/Shipping_containers_in_a_port_%28Unsplash%29.jpg';"><figcaption>Source</figcaption></figure>
+      <figure><img src="assets/photos/factory.png" alt="Real production line" loading="lazy" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/9/9c/Assembly_line_at_Orbbec%27s_Intelligent_Manufacturing_Base.png';"><figcaption>Make</figcaption></figure>
+      <figure><img src="assets/photos/warehouse.jpg" alt="Real warehouse" loading="lazy" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/c/c7/Warehouse_goods.jpg';"><figcaption>Store</figcaption></figure>
+      <figure><img src="assets/photos/hospital.jpg" alt="Real hospital" loading="lazy" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/7/75/Santa_Cabrini_Hospital_Exterior.jpg';"><figcaption>Serve</figcaption></figure>
     </div>
 
     <div class="final-actions">
@@ -213,7 +233,7 @@
 
 <footer>
   <span>East Tennessee State University • Supply Chain Management</span>
-  <span>Real photography served from Wikimedia Commons.</span>
+  <span>V7.1 uses local real-photo files after running SETUP_REAL_PHOTOS.ps1.</span>
 </footer>
 
 <script src="game.js"></script>

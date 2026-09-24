@@ -1,28 +1,44 @@
-# BucSupply 6.0 Photo Sources
+# BucSupply V7.1 — Real Photo Sources
 
-The photo-enhanced build uses real photographs served from Wikimedia Commons rather than AI-generated images.
+All photographs selected for this game are real photographs, not AI-generated images.
+These sources were verified on Wikimedia Commons as CC0 / public-domain dedication.
 
-Selected sources:
+## port.jpg
+- Subject: Shipping containers at the Port of Barcelona
+- Credit: Igor Ovsyannykov / Unsplash (pre-June 2017), CC0
+- Source page: https://commons.wikimedia.org/wiki/File:Shipping_containers_in_a_port_(Unsplash).jpg
 
-- Shipping containers in a port (Unsplash) — Igor Ovsyannykov — CC0
-  https://commons.wikimedia.org/wiki/File:Shipping_containers_in_a_port_(Unsplash).jpg
-- Warehouse goods — ProjectManhattan — CC0
-  https://commons.wikimedia.org/wiki/File:Warehouse_goods.jpg
-- Warehouse in New Jersey where trucks deliver granite slabs — Tomwsulcer — CC0
-  https://commons.wikimedia.org/wiki/File:Warehouse_in_New_Jersey_where_trucks_deliver_granite_slabs.jpg
-- Assembly line at Orbbec's Intelligent Manufacturing Base — Baitutai — CC0
-  https://commons.wikimedia.org/wiki/File:Assembly_line_at_Orbbec%27s_Intelligent_Manufacturing_Base.png
-- Delivery truck at sunrise (Unsplash) — pre-2017 Unsplash source — CC0
-  https://commons.wikimedia.org/wiki/File:Delivery_truck_at_sunrise_(Unsplash).jpg
-- The Road (Unsplash) — Dan Carlson — CC0
-  https://commons.wikimedia.org/wiki/File:The_Road_(Unsplash).jpg
-- Santa Cabrini Hospital Exterior — Nsophiay — CC0
-  https://commons.wikimedia.org/wiki/File:Santa_Cabrini_Hospital_Exterior.jpg
-- Image of hospital equipment — Bamjos — CC0
-  https://commons.wikimedia.org/wiki/File:Image_of_hospital_equipment.jpg
-- Plenary and Interactive session - Engagement & WLUG Business meeting — Androide rockero — CC0
-  https://commons.wikimedia.org/wiki/File:Plenary_and_Interactive_session_-_Engagement_%26_WLUG_Business_meeting.jpg
-- Someone in the goods warehouse — Wikimedia Commons uploader — CC0
-  https://commons.wikimedia.org/wiki/File:Someone_in_the_goods_warehouse.jpg
-- Warehouse (Unsplash) — Alex Iby — CC0
-  https://commons.wikimedia.org/wiki/File:Warehouse_(Unsplash).jpg
+## warehouse.jpg
+- Subject: Palletized inventory stored in warehouse racks
+- Credit: ProjectManhattan, CC0
+- Source page: https://commons.wikimedia.org/wiki/File:Warehouse_goods.jpg
+
+## warehouse_worker.jpg
+- Subject: Worker inside a goods warehouse
+- Credit: Adindanda, CC0
+- Source page: https://commons.wikimedia.org/wiki/File:Someone_in_the_goods_warehouse.jpg
+
+## loading_dock.jpg
+- Subject: Warehouse loading and unloading bay
+- Credit: Tomwsulcer, CC0
+- Source page: https://commons.wikimedia.org/wiki/File:Warehouse_in_New_Jersey_where_trucks_deliver_granite_slabs.jpg
+
+## factory.png
+- Subject: Modern manufacturing assembly line
+- Credit: Baitutai, CC0
+- Source page: https://commons.wikimedia.org/wiki/File:Assembly_line_at_Orbbec%27s_Intelligent_Manufacturing_Base.png
+
+## truck.jpg
+- Subject: Delivery truck on the road
+- Credit: Andrew Kambel / Unsplash (pre-June 2017), CC0
+- Source page: https://commons.wikimedia.org/wiki/File:Delivery_truck_at_sunrise_(Unsplash).jpg
+
+## hospital.jpg
+- Subject: Hospital exterior
+- Credit: Nsophiay, CC0
+- Source page: https://commons.wikimedia.org/wiki/File:Santa_Cabrini_Hospital_Exterior.jpg
+
+## medical_equipment.jpg
+- Subject: Hospital equipment
+- Credit: Bamjos, CC0
+- Source page: https://commons.wikimedia.org/wiki/File:Image_of_hospital_equipment.jpg
